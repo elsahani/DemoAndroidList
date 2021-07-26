@@ -12,7 +12,8 @@ public class MainActivity extends AppCompatActivity {
 
     ListView lv;
     ArrayList<AndroidVersion> al;
-    ArrayAdapter<AndroidVersion> aa;
+    //ArrayAdapter<AndroidVersion> aa;
+    CustomAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         al.add(new AndroidVersion("Oreo", "8.0"));
         al.add(new AndroidVersion("Nougat", "7.0"));
 
-        aa = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, al);
-        lv.setAdapter(aa);
+        adapter = new CustomAdapter(MainActivity.this, R.layout.row, al);
+        lv.setAdapter(adapter);
 
     }
 }
